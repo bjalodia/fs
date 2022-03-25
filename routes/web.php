@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\KpiController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\HotelController;
+use App\Http\Controllers\GstController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +24,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resource('kpis', KpiController::class);
+Route::resource('user', UserController::class);
 Route::resource('hotel', HotelController::class);
+
+Route::prefix('projects')->group(function () {
+    Route::get('getToken', [GstController::class, 'getToken'])->name('getToken');
+});

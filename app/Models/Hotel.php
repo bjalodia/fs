@@ -8,14 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Hotel extends Model
 {
     use HasFactory;
-
-    public function kpi()
+    public function users()
     {
-        return $this->hasMany(Kpi::class);
+        return $this->belongsToMany(User::class)
+        ->withTimestamps();
     }
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
- 
 }

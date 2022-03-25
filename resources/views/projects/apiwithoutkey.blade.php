@@ -1,0 +1,2 @@
+{{$responseBody->access_token}}
+

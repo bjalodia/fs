@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreHotelRequest;
 use App\Http\Requests\UpdateHotelRequest;
 use App\Models\Hotel;
-use App\Models\Kpi;
 
 class HotelController extends Controller
 {
@@ -18,9 +17,11 @@ class HotelController extends Controller
     {
         
         
-        // $hotel = Hotel::all()->dd();
+     // $hotel = Hotel::all()->dd();
 
         // return view('hotel.index',compact('hotel'));
+
+        return view('hotel.index');
     }
 
     /**
